@@ -24,6 +24,7 @@ async function startWorker() {
         while (true) {
             try {
                 const submission = await client.brPop("problems", 0);
+                console.log(submission);
                 // @ts-ignore
                 await processSubmission(submission.element);
             } catch (error) {
